@@ -22,6 +22,7 @@ public class Ej10 {
 
             }
         }
+        return a3;
     }
 
     public static int indexOf(int[]a, int elem){
