@@ -1,59 +1,47 @@
 package BOLETIN_MATRICES;
 
+import BOLETIN1.Ej5;
+
 public class Ej13 {
 
     public static void main(String[] args) {
-
-        int [][] matriz = {
+        int[][] matriz = {
 
                 {1, 2, 3, 4, 5},
                 {6, 7, 8, 9, 0},
                 {3, 2, 1, 4, 5},
                 {9, 5, 8, 6, 7},
                 {0, 9, 8, 5, 4}
+
         };
+
+        Ej12.imprimirMatriz(matriz);
+
+        if (Ej12.matrizCuadrada(matriz)) {
+            int[][] matriz2 = reflejoDiagonal(matriz);
+            Ej12.imprimirMatriz(matriz2);
+
+        }else {
+
+            System.out.println("La matriz no es cuadrada");
+        }
+
     }
 
+    public static int[][] reflejoDiagonal(int[][] matriz) {
 
-    public static int [][] matrizReflejada (int [][] matriz) {
+        int[][] matrizInversa = new int[matriz.length][matriz[0].length];
 
-        if (!matrizCuadrada(matriz)){
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
 
-            return null;
-        }
-        int [][] matrizReflejada = new int [matriz.length][matriz[0].length];
-
-        for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j < matriz[i].length; i++){
-
-                matrizReflejada[i][j] = matriz[j][i];
+                matrizInversa[i][j] = matriz[matriz.length - 1 - j][matriz.length - 1 - i];
             }
         }
 
-        return matrizReflejada;
+        return matrizInversa;
     }
 
-    public static boolean matrizCuadrada (int [][] matriz){
-
-        for (int i = 0; i < matriz.length; i++){
-                if (matriz.length != matriz[i].length){
-
-                    return false;
-            }
-        }
-
-        return matriz.length == matriz[0].length;
-    }
-
-    public static void imprimirMatriz (int[][] matriz){
-
-        for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j < matriz[i].length; i++){
-
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-    }
 }
+
+
