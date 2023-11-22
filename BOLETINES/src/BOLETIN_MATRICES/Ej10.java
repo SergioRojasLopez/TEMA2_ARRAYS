@@ -13,7 +13,7 @@ public class Ej10 {
 
         if (comprobarSimetria(matriz)){
 
-            System.out.println("La matriz es simetrica");
+            System.out.println("La matriz es simetrica eje Y");
         }else {
 
             System.out.println("La matriz no es simetrica");

@@ -18,9 +18,7 @@ public class Ej5 {
                 System.out.print(matriz[i][j] + " ");
 
             }
-
         }
-
     }
 }
 

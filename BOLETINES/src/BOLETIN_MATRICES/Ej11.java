@@ -27,12 +27,9 @@ public class Ej11 {
     }
 
     public static boolean matrizInversa(int[][] matriz1, int [][] matriz2){
-
-
         for (int i = 0; i < matriz1.length; i++){
             for (int j = 0; j < matriz1[i].length; j++){
-
-                if (matriz1[i][j] != matriz2[matriz1.length - 1 - i][matriz1[0].length - 1 - j])
+                if (matriz1[i][j] != matriz2[matriz1.length - 1 - i][matriz1[i].length - 1 - j])
 
                     return false;
             }

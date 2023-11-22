@@ -14,17 +14,50 @@ public class Ej7 {
                 {4, 2, 5}
         };
 
-        compararMatrices(matriz,matriz2);
-    }
+        if (matrizCuadrada(matriz)){
 
-    public static void compararMatrices(int[][] matriz,int [][] matriz2) {
-
-        if (matriz == matriz2){
-            System.out.println("Las matrices son iguales ");
+            System.out.println("La primera matriz es cuadrada ");
 
         }else {
-            System.out.println("Las matrices no son iguales");
+
+            System.out.println("La primera matriz no es cuadrada");
         }
+
+        if (matrizCuadrada(matriz2)){
+
+            System.out.println("La segunda matriz es cuadrada");
+
+        }else {
+
+            System.out.println("La segunda matriz no es cuadrada");
+        }
+
+        }
+
+
+    public static boolean compararMatrices(int[][] matriz,int [][] matriz2) {
+
+        if (matriz.length != matriz2.length && matriz[0].length != matriz2[0].length){
+
+            return false;
+        }
+        for (int i = 0; i < matriz.length; i++){
+            for (int j = 0; j < matriz[i].length; j++){
+
+                if (matriz[i][j] != matriz2[i][j]){
+
+                    return false;
+                }
+            }
+        }
+
+
+        return true;
+    }
+
+    public static boolean matrizCuadrada (int [][] matriz){
+
+        return matriz.length == matriz[0].length;
 
     }
 }
